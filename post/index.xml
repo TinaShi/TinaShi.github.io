@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Academic</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Academic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Recommendation to R-bloggers</title>
+      <link>/post/recommendation-to-r-bloggers/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/recommendation-to-r-bloggers/</guid>
+      <description>&lt;p&gt;Here is a cool website for R to check out, &lt;a href=&#34;https://www.r-bloggers.com&#34; target=&#34;_blank&#34;&gt;R-bloggers&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A short tutorial of blogdown for beginners</title>
+      <link>/post/2017-06-12-a-short-tutorial-of-blogdown-for-beginners/</link>
+      <pubDate>Mon, 12 Jun 2017 19:17:00 +0000</pubDate>
+      
+      <guid>/post/2017-06-12-a-short-tutorial-of-blogdown-for-beginners/</guid>
+      <description>&lt;p&gt;This is a tutorial for the people like me, who are building the first personal website with RStudio installed. This tutorial will explain only the necessary steps to put the static website online with blogdown + Hugo + Netlify. If you want to make it fancier or if you want to explore more, &lt;a href=&#34;https://www.rstudio.com/resources/webinars/introducing-blogdown/&#34; target=&#34;_blank&#34;&gt;Yihui Xie’s video&lt;/a&gt; and Yihui Xie and Amber Thomas’ book blogdown: &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;Creating Websites with R Markdown&lt;/a&gt; are great resources. My friend Josh helped me to figure out the following steps, I simply summarize it here.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com&#34; target=&#34;_blank&#34;&gt;Download RStudio here&lt;/a&gt;.
+Create a new project in RStudio. File -&amp;gt; New Project -&amp;gt; New Directory -&amp;gt; Empty Project-&amp;gt; Type in Directory name and choose the working directory. Here I just use example as directory name, and create project as subdirectory of the default setting ~ (which is /Users/tinashi) -&amp;gt; Click “Create Project”.&lt;/li&gt;
+&lt;li&gt;Install blogdown in RStudio
+devtools::install_github(&amp;ldquo;rstudio/blogdown&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;The use the following code:
+library(blogdown)
+blogdown::install_hugo()
+blogdown::new_site()
+blogdown::hugo_build()&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In RStudio Viewer you will see the following image
+&lt;img src=&#34;/img/Picture1.png&#34; alt=&#34;Figure 1&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Based on the instructions in Yihui Xie and Amber Thomas’ book blogdown: Creating Websites with R Markdown &lt;a href=&#34;https://bookdown.org/yihui/blogdown/workflow.html&#34; target=&#34;_blank&#34;&gt;Section 1.7 A recommended workflow&lt;/a&gt;, we can deploy the website by using Netlify.
+“Log in onto &lt;a href=&#34;https://www.netlify.com&#34; target=&#34;_blank&#34;&gt;https://www.netlify.com&lt;/a&gt; (you can use a GitHub account if you have one).”
+Click “Site” after logging into netlify, we can see the following instruction:
+&lt;img src=&#34;/img/Picture2.png&#34; alt=&#34;Figure 2&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Since my project has path /Users/username/personal_website, we can find public folder under this directory. We right-click public folder, and choose Compress “public”. Drag public.zip to Netlify.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now click “Sites” on Netlify again, if you see the following image (it should have a different name though), the website is deployed.
+&lt;img src=&#34;/img/Picture3.png&#34; alt=&#34;Figure 3&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Click on the green name, you will see the link to the website.
+&lt;img src=&#34;/img/Picture4.png&#34; alt=&#34;Figure 4&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Click on the link provided by Netlify &lt;a href=&#34;https://gunner-crocodile-33781.netlify.com&#34; target=&#34;_blank&#34;&gt;https://gunner-crocodile-33781.netlify.com&lt;/a&gt;, it directs to your website.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If you want to custom the domain, click “Set up domain”. Type in the domain name you have and click Save.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Comment: I purchased my domain name in google, so I go to google domains -&amp;gt; Manage my domains -&amp;gt; DNS (configure DNS) -&amp;gt; type in “104.198.14.52” for IPv4 address under Custom resource records -&amp;gt; Add. If you already have a record, you can just edit the IPv4 address. Then the domain name you have points to the website you have created with netlify.&lt;/p&gt;
+
+&lt;p&gt;References:&lt;br /&gt;
+1.  &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;Yihui Xie and Amber Thomas’ book blogdown&lt;/a&gt;&lt;br /&gt;
+2.  &lt;a href=&#34;https://www.netlify.com&#34; target=&#34;_blank&#34;&gt;Netlify homepage&lt;/a&gt;&lt;br /&gt;
+3.  &lt;a href=&#34;https://www.netlify.com/docs/custom-domains/#dns-configuration&#34; target=&#34;_blank&#34;&gt;Netlify custom domain instruction&lt;/a&gt;&lt;br /&gt;
+4.  Friend Josh&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
